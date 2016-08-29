@@ -1,0 +1,80 @@
+= Vert.x Maven Starter
+
+This project is a template to start your own Vert.x project using the Vert.x `cli` (command line interface).
+
+== Prerequisites
+
+* JDK 8+
+
+== Getting started
+
+Create your project with:
+
+[source]
+----
+git clone https://github.com/cescoffier/vertx-cli-starter.git PROJECT_NAME
+----
+
+Replace `PROJECT_NAME` with the name of your project.
+
+On Linux and MacOSx (or Windows with `bash`), if you want to go faster and generate an already configured project run:
+
+[source]
+----
+# Bash
+curl https://gist.githubusercontent.com/cescoffier/cfd46c2614f54d5e2a88d5fdc4b828ed/raw/453bc44856bb93f1c31fbe8b08a285793b0134cd/create-project-maven.sh -o vertx-create-cli-project.sh && bash vertx-create-cli-project.sh
+
+# Fish
+curl https://gist.githubusercontent.com/cescoffier/cfd46c2614f54d5e2a88d5fdc4b828ed/raw/453bc44856bb93f1c31fbe8b08a285793b0134cd/create-project-maven.sh -o vertx-create-cli-project.sh; bash vertx-create-cli-project.sh
+----
+
+== Running the project
+
+Once you have retrieved the project, just run:
+
+[source]
+----
+./vertx.sh run src/io/vertx/starter/MainVerticle.java
+# or
+./vertx.bat run src\io\vertx\starter\MainVerticle.java
+----
+
+The command compiles the verticle Java class, then  it launches the application, so you can check by yourself. Open your browser to http://localhost:8080. You should see a _Hello World_ message.
+
+== Anatomy of the project
+
+The project contains:
+
+* `vertx` scripts to launch Vert.x
+* a _main_ verticle file (src/main/java/io/vertx/starter/MainVerticle.java)
+* the Vert.x stack in the `vertx` directory
+
+== Start to hack
+
+First, you should delete the `.git` directory. Then launch:
+
+[source]
+----
+./vertx.sh run src/io/vertx/starter/MainVerticle.java --redeploy="src/**.*" --launcher-class="io.vertx.core.Launcher"
+# or
+./vertx.bat run src\io\vertx\starter\MainVerticle.java --redeploy="src\**.*" --launcher-class="io.vertx.core.Launcher"
+----
+
+== Change the content of the Vert.x stack
+
+To add or remove a dependency to your project, edit the `vertx/vertx-stack.json`. You can:
+
+* include a listed dependency by switching the `included` flag to `true`
+* add a non listed dependency by using its (Maven) groupId, artifactId and version. By default the `included` flag is set to `true`
+* change the Vert.x version by updating the `vertx.version` variables
+
+We highly recommend to not modify the content of the `vertx/lib` directory by yourself but use this descriptor.
+
+When done, just launch:
+
+[source]
+----
+./vertx.sh resolve
+# or
+./vertx.bat resolve
+----
