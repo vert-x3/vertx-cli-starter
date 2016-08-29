@@ -55,9 +55,9 @@ First, you should delete the `.git` directory. Then launch:
 
 [source]
 ----
-./vertx.sh run src/io/vertx/starter/MainVerticle.java --redeploy="src/**.*" --launcher-class="io.vertx.core.Launcher"
+./vertx.sh run src/io/vertx/starter/MainVerticle.java --redeploy="src/**/*" --launcher-class="io.vertx.core.Launcher"
 # or
-./vertx.bat run src\io\vertx\starter\MainVerticle.java --redeploy="src\**.*" --launcher-class="io.vertx.core.Launcher"
+./vertx.bat run src\io\vertx\starter\MainVerticle.java --redeploy="src\**\*" --launcher-class="io.vertx.core.Launcher"
 ----
 
 == Change the content of the Vert.x stack
