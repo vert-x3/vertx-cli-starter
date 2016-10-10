@@ -14,8 +14,8 @@
 //
 {
   "variables": {
-    "vertx.version": "3.3.2",
-    "netty.version": "1.1.33.Fork17"
+    "vertx.version": "3.3.3",
+    "netty.version": "1.1.33.Fork21"
   },
   "dependencies": [
     {
