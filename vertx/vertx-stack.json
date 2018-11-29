@@ -14,8 +14,8 @@
 //
 {
     "variables": {
-        "vertx.version": "3.5.2",
-        "netty.version": "2.0.7.Final"
+        "vertx.version": "3.6.0",
+        "tcnative.version": "2.0.17.Final"
     },
     "dependencies": [{
             "groupId": "io.vertx",
@@ -26,7 +26,7 @@
         {
             "groupId": "io.netty",
             "artifactId": "netty-tcnative-boringssl-static",
-            "version": "${netty.version}",
+            "version": "${tcnative.version}",
             "included": true
         },
         {
