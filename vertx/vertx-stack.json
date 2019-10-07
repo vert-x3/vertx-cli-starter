@@ -14,8 +14,8 @@
 //
 {
     "variables": {
-        "vertx.version": "3.8.1",
-        "tcnative.version": "2.0.17.Final"
+        "vertx.version": "3.8.2",
+        "tcnative.version": "2.0.25.Final"
     },
     "dependencies": [{
             "groupId": "io.vertx",
